@@ -39,7 +39,8 @@ Gem::Specification.new do |s|
     "spec/fixtures/vcr_cassettes/vagalume_song_not_found.yml",
     "spec/spec_helper.rb",
     "test/helper.rb",
-    "test/test_vagalume.rb"
+    "test/test_vagalume.rb",
+    "vagalume.gemspec"
   ]
   s.homepage = "http://github.com/brianstorti/vagalume"
   s.licenses = ["MIT"]
