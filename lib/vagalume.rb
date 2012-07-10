@@ -1,12 +1,12 @@
 require "multi_json"
 require "cgi"
 require "open-uri"
-require "vagalume/core_ext/array"
-require "vagalume/search_result"
-require "vagalume/language"
-require "vagalume/song"
-require "vagalume/artist"
-require "vagalume/status"
+require_relative "vagalume/core_ext/array"
+require_relative "vagalume/search_result"
+require_relative "vagalume/language"
+require_relative "vagalume/song"
+require_relative "vagalume/artist"
+require_relative "vagalume/status"
 
 module Vagalume
   BASE_URL = "http://www.vagalume.com.br/api/search.php?"
