@@ -44,3 +44,5 @@ puts result.translations.with_language(Vagalume::Language::PORTUGUESE) # return 
 Copyright (c) 2012 Brian Thomas Storti. See LICENSE.txt for
 further details.
 
+
+
