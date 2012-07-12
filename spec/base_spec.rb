@@ -2,26 +2,30 @@
 
 require "spec_helper"
 
-describe "Base" do
-  it "should bring song" do
+describe Vagalume do
+
+  before(:each) do
     VCR.use_cassette('vagalume') do
-      result = Vagalume.find("Metallica", "The Unforgiven")
-      song = result.song
-      artist = result.artist
-      lyric = File.read 'spec/assets/unforgiven_lyric.txt'
-
-      result.status.should == Vagalume::Status::EXACT
-
-      song.id.should == "3ade68b6g470deda3"
-      song.name.should == "The Unforgiven"
-      song.language.should == Vagalume::Language::ENGLISH
-      song.url.should == "http://www.vagalume.com.br/metallica/the-unforgiven.html"
-      song.lyric.should == lyric.chop!
-
-      artist.id.should == "3ade68b5g7257eda3"
-      artist.name.should == "Metallica"
-      artist.url.should == "http://www.vagalume.com.br/metallica/"
+      @result = Vagalume.find("Metallica", "The Unforgiven")
     end
+  end
+
+  it "should bring song" do
+    song = @result.song
+    artist = @result.artist
+    lyric = File.read 'spec/assets/unforgiven_lyric.txt'
+
+    @result.status.should == Vagalume::Status::EXACT
+
+    song.id.should == "3ade68b6g470deda3"
+    song.name.should == "The Unforgiven"
+    song.language.should == Vagalume::Language::ENGLISH
+    song.url.should == "http://www.vagalume.com.br/metallica/the-unforgiven.html"
+    song.lyric.should == lyric.chop!
+
+    artist.id.should == "3ade68b5g7257eda3"
+    artist.name.should == "Metallica"
+    artist.url.should == "http://www.vagalume.com.br/metallica/"
   end
 
   it "should return result with song not found status" do
@@ -39,20 +43,14 @@ describe "Base" do
   end
 
   it "should have translations" do
-    VCR.use_cassette('vagalume') do
-      result = Vagalume.find("Metallica", "The Unforgiven") 
-      result.translations.should_not be_empty
-      pt_translation = result.translations.with_language(Vagalume::Language::PORTUGUESE)
-      lyric = File.read 'spec/assets/unforgiven_lyric_translation_pt.txt'
-      pt_translation.lyric.should == lyric.chop!
-    end
+    @result.translations.should_not be_empty
+    pt_translation = @result.translations.with_language(Vagalume::Language::PORTUGUESE)
+    lyric = File.read 'spec/assets/unforgiven_lyric_translation_pt.txt'
+    pt_translation.lyric.should == lyric.chop!
   end
 
   it "should get right song name for translations" do
-    VCR.use_cassette('vagalume') do
-      result = Vagalume.find("Metallica", "The Unforgiven")
-      translated_song = result.translations.with_language(Vagalume::Language::PORTUGUESE)
-      translated_song.name.should == "Os Imperdoáveis"
-    end
+    translated_song = @result.translations.with_language(Vagalume::Language::PORTUGUESE)
+    translated_song.name.should == "Os Imperdoáveis"
   end
 end
