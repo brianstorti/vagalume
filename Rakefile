@@ -20,6 +20,8 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Ruby interface for the Vagalume API}
   gem.email = "btstorti@gmail.com"
   gem.authors = ["Brian Thomas Storti"]
+  gem.executables = ["vagalume"]
+  gem.default_executable = "vagalume"
   gem.add_dependency "multi_json"
 end
 Jeweler::RubygemsDotOrgTasks.new

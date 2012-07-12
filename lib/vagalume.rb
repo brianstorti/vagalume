@@ -6,14 +6,23 @@ require_relative "vagalume/search_result"
 require_relative "vagalume/language"
 require_relative "vagalume/song"
 require_relative "vagalume/artist"
+require_relative "vagalume/lyric_formatter"
 require_relative "vagalume/status"
 
 module Vagalume
+  extend self
+
   BASE_URL = "http://www.vagalume.com.br/api/search.php?"
 
-  def self.find(artist, song)
+  def find(artist, song)
     request_url = BASE_URL + "art=#{CGI.escape(artist)}&mus=#{CGI.escape(song)}"
     result_json = MultiJson.decode(open(request_url).read)
     search_result = Vagalume::SearchResult.fetch(result_json)
   end
+
+  def print(artist, song, options)
+    search = find(artist, song)
+    puts Vagalume::LyricFormatter.format(search, options)
+  end
+
 end
