@@ -9,43 +9,49 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brian Thomas Storti"]
-  s.date = "2012-07-10"
+  s.date = "2012-07-12"
   s.description = "Ruby interface for the Vagalume API"
   s.email = "btstorti@gmail.com"
+  s.executables = ["vagalume"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
+    "bin/vagalume",
     "lib/vagalume.rb",
     "lib/vagalume/artist.rb",
     "lib/vagalume/core_ext/array.rb",
     "lib/vagalume/language.rb",
+    "lib/vagalume/lyric_formatter.rb",
     "lib/vagalume/search_result.rb",
     "lib/vagalume/song.rb",
     "lib/vagalume/status.rb",
+    "spec/array_spec.rb",
+    "spec/assets/lyric_formatter/unforgiven_lyric.txt",
+    "spec/assets/lyric_formatter/unforgiven_lyric_with_translation.txt",
     "spec/assets/unforgiven_lyric.txt",
     "spec/assets/unforgiven_lyric_translation_pt.txt",
+    "spec/assets/unforgiven_lyric_with_translation.txt",
     "spec/base_spec.rb",
     "spec/fixtures/vcr_cassettes/vagalume.yml",
     "spec/fixtures/vcr_cassettes/vagalume_not_found.yml",
     "spec/fixtures/vcr_cassettes/vagalume_song_not_found.yml",
+    "spec/lyric_formatter_spec.rb",
     "spec/spec_helper.rb",
-    "test/helper.rb",
-    "test/test_vagalume.rb",
     "vagalume.gemspec"
   ]
   s.homepage = "http://github.com/brianstorti/vagalume"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.17"
   s.summary = "Ruby interface for the Vagalume API"
 
   if s.respond_to? :specification_version then
