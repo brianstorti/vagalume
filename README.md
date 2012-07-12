@@ -37,7 +37,17 @@ puts result.artist.name
 puts result.artist.url
 
 puts result.translations.with_language(Vagalume::Language::PORTUGUESE) # return a Song object
-````
+```
+
+You can also use it from the command line: 
+```console
+vagalume Metallica - The Unforgiven
+```
+or passing the [-t] flag, to show the portuguese translation:
+```console
+vagalume -t Metallica - The Unforgiven
+```
+
 
 ## License
 
