@@ -24,5 +24,4 @@ module Vagalume
     search = find(artist, song)
     puts Vagalume::LyricFormatter.format(search, options)
   end
-
 end
