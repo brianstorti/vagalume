@@ -22,6 +22,8 @@ class Vagalume::LyricFormatter
       output
     end
 
+    private
+
     def separator(bigger_line, lyric_line)
       " " * (bigger_line - lyric_line.size) + "     |     "
     end

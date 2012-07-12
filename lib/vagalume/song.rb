@@ -20,6 +20,8 @@ module Vagalume
       @name.nil?
     end
 
+    private
+
     def self.get_name_from_lyric(lyric)
       title = lyric.lines.first
       title.gsub(/\[|\]|\n/, "")
