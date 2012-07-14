@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.vagalume.com.br/api/search.php?art=Bruce%20Springsteen&mus=Ain't%20good%20enough%20for%20You
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/x-javascript; charset=UTF-8
+      Keep-Alive:
+      - timeout=60
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sat, 14 Jul 2012 20:48:59 GMT
+      Cache-Control:
+      - max-age=30
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Count:
+      - '10'
+      X-Powered-By:
+      - Vagalume
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Sat, 14 Jul 2012 20:48:29 GMT
+      X-Varnish:
+      - '2430257346'
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"type":"exact","art":{"id":"3ade68b5g01a8eda3","name":"Bruce Springsteen","url":"http:\/\/www.vagalume.com.br\/bruce-springsteen\/"},"mus":[{"id":"3ade68b8g567cdfa3","name":"Ain''t
+        Good Enough For You","url":"http:\/\/www.vagalume.com.br\/bruce-springsteen\/aint-good-enough-for-you.html","lang":2,"text":"Well
+        you don''t like, don''t like the way I walk\nAnd you don''t like, don''t like
+        the way I talk\nYou criticize about me endlessly\nLogic defies how you get
+        stuck with me\nAnd you complain about the clothes I wear\nAnd you explain
+        there''s other boys out there\nYou complain my car makes too much noise\nAnd
+        you cry I''m always out with the boys\n\nWhoa whoa (whoa whoa whoa whoa)\nI
+        give up little darling (whoa whoa little darling)\nYeah no matter what I do,
+        girl you know it''s true\nAin''t good enough for you\n\nYou complain the way
+        I love you at night\nYou explain I''m really not your type\nIf we go out,
+        you say I''m such a bore\nIf we stay in, you say what are we living for\nI
+        don''t understand, there''s nothing I can do\nThere ain''t no way I can satisfy
+        you\nEnd of the night I lean in for a kiss\nHere comes the pitch, a swing
+        and a miss\n\nWhoa whoa whoa whoa (whoa whoa whoa whoa)\nI quit little darling
+        (whoa whoa little darling)\nYeah no matter what I do, well you know it''s
+        true\nAin''t good enough for you, hey!\nHey!\n(Come on boys!)\n\nWhoa whoa
+        whoa whoa (whoa whoa whoa whoa)\nHey hey little darling (whoa whoa little
+        darling)\nNo matter what I do, girl you know it''s true\nAin''t good enough
+        for you\n\nI tried to change, I got a job in sales\nI bought a shirt uptown
+        in Bloomindales\nAnd babe I tried to make the latest scene\nHitting cool just
+        like Jimmy Iovine\nI bought a record with all the latest grooves\nA book of
+        love with all the latest moves\nI bought some flowers and I waited at your
+        door\nAnd you came out, didn''t want to see me no more\n\nWhoa whoa whoa (whoa
+        whoa whoa whoa)\nI quit little darling (whoa whoa little darling)\nYeah no
+        matter what I do, girl you know it''s true\nAin''t good enough for you\nHey!
+        Hey! Hey!\nNo matter what I do, girl you know it''s true\nAin''t good enough
+        for you\nAww no matter what I do, girl you know it''s true\nAin''t good enough
+        for you\nWhoaaa!"}]}'
+    http_version: 
+  recorded_at: Sat, 14 Jul 2012 20:48:29 GMT
+recorded_with: VCR 2.2.2
