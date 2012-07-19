@@ -1,6 +1,6 @@
 ## Vagalume
 
-A simple ruby interface to the Vagalume API
+A simple ruby interface to the Vagalume API. Also a command line utility to search song lyrics.
 
 ## Install
 
