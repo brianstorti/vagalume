@@ -4,42 +4,42 @@ A simple ruby interface to the Vagalume API. Also a command line utility to sear
 
 ## Install
 
-You can add it to your Gemfile with:
+If you are using bundler, add it to your Gemfile:
 ```ruby
 gem 'vagalume'
 ```
-and run the bundle command to install it.
-
-For non-Rails projects, you can simply install the gem with
+or you can just install it with
 ```console
-gem install 'vagalume'
+gem install vagalume
 ```
 
 ## Usage
 
-The usage of the vagalume gem is pretty simple:
+The usage is pretty simple:
 
 ```ruby
 require "vagalume"
 
 result = Vagalume.find("Metallica", "The Unforgiven")
 
-puts result.status # Can be "exact", "aprox", "song_notfound" or "notfound"
+result.status # => Can be "exact", "aprox", "song_notfound" or "notfound"
 
-puts result.song.id
-puts result.song.name
-puts result.song.language
-puts result.song.url
-puts result.song.lyric
+song = result.song
+song.id
+song.name
+song.language
+song.url
+song.lyric
 
-puts result.artist.id
-puts result.artist.name
-puts result.artist.url
+artist = result.artist
+artist.id
+artist.name
+artist.url
 
-puts result.translations.with_language(Vagalume::Language::PORTUGUESE) # return a Song object
+result.translations.with_language(Vagalume::Language::PORTUGUESE) # return a Song object
 ```
 
-You can also use it from the command line: 
+You can also use it from the command line:
 ```console
 vagalume Metallica - The Unforgiven
 ```
@@ -48,6 +48,15 @@ or passing the [-t] flag, to show the portuguese translation:
 vagalume -t Metallica - The Unforgiven
 ```
 
+It's also pretty good at finding approximations, so you can try something like that:
+```console
+vagalume metalica - unforgiven
+```
+And everything should work fine.
+
+## Requirements
+
+Ruby >= 1.8.7
 
 ## License
 
