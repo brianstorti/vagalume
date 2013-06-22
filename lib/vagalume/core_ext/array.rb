@@ -1,6 +1,6 @@
 class Array
   def with_language(language)
-    select { |song| song.language == language }.first
+    detect { |song| song.language == language }
   end
 end
 
