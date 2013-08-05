@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brian Thomas Storti"]
-  s.date = "2012-07-12"
+  s.date = "2013-08-05"
   s.description = "Ruby interface for the Vagalume API"
   s.email = "btstorti@gmail.com"
   s.executables = ["vagalume"]
@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/vcr_cassettes/vagalume.yml",
     "spec/fixtures/vcr_cassettes/vagalume_not_found.yml",
     "spec/fixtures/vcr_cassettes/vagalume_song_not_found.yml",
+    "spec/fixtures/vcr_cassettes/vagalume_with_no_translation_available.yml",
     "spec/lyric_formatter_spec.rb",
     "spec/spec_helper.rb",
     "vagalume.gemspec"
@@ -51,11 +52,11 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/brianstorti/vagalume"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "2.0.3"
   s.summary = "Ruby interface for the Vagalume API"
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<multi_json>, [">= 0"])
@@ -81,3 +82,4 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<multi_json>, [">= 0"])
   end
 end
+
