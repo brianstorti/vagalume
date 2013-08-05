@@ -4,11 +4,16 @@ require 'rubygems'
 require 'optparse'
 require 'vagalume'
 
+if ARGV.empty?
+  system "vagalume -h"
+  exit
+end
+
 options = {}
 optparse = OptionParser.new do |opts|
   opts.banner = "Usage: vagalume [options] [artist] - [song]"
   opts.banner += "\n    vagalume Metallica - Unforgiven"
-  opts.banner += "\n    vagalume -t Metallica - Unforgiven        Shows portuguese translation"
+  opts.banner += "\n    vagalume -t Metallica - Unforgiven        Shows portuguese translation\n\n"
 
   options[:translation] = false
   opts.on('-t', '--translation', 'Print translation') do
