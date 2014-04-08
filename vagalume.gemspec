@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.name          = "vagalume"
   spec.executables   = ["vagalume"]
-  spec.version       = "0.1.3"
+  spec.version       = "0.1.4"
   spec.authors       = ["Brian Thomas Storti"]
   spec.email         = ["btstorti@gmail.com"]
   spec.description   = "Ruby interface for the Vagalume API"
