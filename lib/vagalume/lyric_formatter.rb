@@ -7,8 +7,8 @@ class Vagalume::LyricFormatter
       output = "\n\n"
 
       return "No lyric found" if status == Vagalume::Status::NOT_FOUND || status == Vagalume::Status::SONG_NOT_FOUND
-      return "No translation found" if translated_song.nil?
       return "\n\n#{song.name}\n\n#{song.lyric}" unless options[:translation]
+      return "No translation found" if translated_song.nil?
 
       bigger_line = bigger_line(song.lyric)
       lyric_array = [song.name, ""]
