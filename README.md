@@ -1,4 +1,4 @@
-## Vagalume
+![vagalume-logo](https://github.com/brianstorti/vagalume/blob/master/vagalume.jpg)
 
 A simple ruby interface to the Vagalume API. Also a command line utility to search song lyrics.
 
