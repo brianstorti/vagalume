@@ -16,11 +16,10 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files`.split($/)
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "multi_json"
+  spec.add_runtime_dependency "multi_json", "~> 1.9.2"
 
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "webmock"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "vcr", "~> 2.9.0"
+  spec.add_development_dependency "webmock", "~> 1.17.4"
+  spec.add_development_dependency "rspec", "~> 2.14.1"
 end
