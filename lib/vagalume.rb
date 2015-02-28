@@ -22,6 +22,7 @@ module Vagalume
 
   def get_lyric(artist, song, options)
     search = find(artist, song)
-    Vagalume::LyricFormatter.format(search, options)
+    formatter = Vagalume::LyricFormatter.new
+    formatter.format(search, options)
   end
 end
