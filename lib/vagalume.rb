@@ -20,8 +20,8 @@ module Vagalume
     search_result = Vagalume::SearchResult.fetch(result_json)
   end
 
-  def print(artist, song, options)
+  def get_lyric(artist, song, options)
     search = find(artist, song)
-    puts Vagalume::LyricFormatter.format(search, options)
+    Vagalume::LyricFormatter.format(search, options)
   end
 end
