@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.vagalume.com.br/api/search.php?art=Bruce%20Springsteen&mus=Ain't%20good%20enough%20for%20You
+    uri: http://www.vagalume.com.br/api/search.php?art=Bruce%20Springsteen&mus=Ain%27t%20good%20enough%20for%20You
     body:
       encoding: US-ASCII
       string: ''
@@ -76,6 +76,6 @@ http_interactions:
         Hey! Hey!\nNo matter what I do, girl you know it''s true\nAin''t good enough
         for you\nAww no matter what I do, girl you know it''s true\nAin''t good enough
         for you\nWhoaaa!"}]}'
-    http_version: 
+    http_version:
   recorded_at: Sat, 14 Jul 2012 20:48:29 GMT
 recorded_with: VCR 2.2.2
