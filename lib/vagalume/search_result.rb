@@ -18,5 +18,10 @@ module Vagalume
         @translations << Vagalume::Song.new(translation)
       end
     end
+
+    def not_found?
+       @status == Vagalume::Status::NOT_FOUND ||
+       @status == Vagalume::Status::SONG_NOT_FOUND
+    end
   end
 end

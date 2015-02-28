@@ -1,11 +1,11 @@
 class Vagalume::LyricFormatter
   def format(search, options)
-    status = search.status
+    return "No lyric found" if search.not_found?
+
     song = search.song
     translated_song = search.translations.with_language(Vagalume::Language::PORTUGUESE)
     output = "\n\n"
 
-    return "No lyric found" if status == Vagalume::Status::NOT_FOUND || status == Vagalume::Status::SONG_NOT_FOUND
     return "\n\n#{song.name}\n\n#{song.lyric}" unless options[:translation]
     return "No translation found" if translated_song.nil?
 
