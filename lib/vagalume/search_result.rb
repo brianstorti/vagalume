@@ -11,11 +11,11 @@ module Vagalume
       song = result["mus"].first
       artist = result["art"]
       translations = song["translate"] || []
-      @song = Vagalume::Song.fetch(song)
-      @artist = Vagalume::Artist.fetch(artist)
+      @song = Vagalume::Song.new(song)
+      @artist = Vagalume::Artist.new(artist)
 
       translations.each do |translation|
-        @translations << Vagalume::Song.fetch(translation)
+        @translations << Vagalume::Song.new(translation)
       end
     end
   end
