@@ -5,36 +5,36 @@ module Vagalume
 
       song = search.song
       translated_song = search.translations.with_language(Vagalume::Language::PORTUGUESE)
-      output = "\n\n"
 
       return "\n\n#{song.name}\n\n#{song.lyric}" unless options[:translation]
       return "No translation found" if translated_song.nil?
 
-      bigger_line = bigger_line(song.lyric)
-      lyric_array = [song.name, ""]
-      translation_array = [translated_song.name, ""]
+      original_lyrics_lines = [song.name, ""]
+      translated_lyrics_lines = [translated_song.name, ""]
 
-      lyric_array += song.lyric.split("\n")
-      translation_array += translated_song.lyric.split("\n")
+      original_lyrics_lines += song.lyric.split("\n")
+      translated_lyrics_lines += translated_song.lyric.split("\n")
 
-      lyric_array.each_with_index do |lyric_line, index|
-        output += lyric_line + separator(bigger_line, lyric_line) + translation_array[index].to_s + "\n"
+      biggest_line_size = biggest_line_size(song.lyric)
+      output = "\n\n"
+
+      original_lyrics_lines.each_with_index do |original_line, index|
+        separator = find_separator(biggest_line_size, original_line)
+        translated_line = translated_lyrics_lines[index]
+        output += original_line + separator + translated_line + "\n"
       end
+
       output
     end
 
     private
 
-    def separator(bigger_line, lyric_line)
-      " " * (bigger_line - lyric_line.size) + "     |     "
+    def find_separator(biggest_line_size, lyric_line)
+      " " * (biggest_line_size - lyric_line.size) + "     |     "
     end
 
-    def bigger_line(lyric)
-      bigger = 0
-      lyric.each_line do |line|
-        bigger = line.size if line.size > bigger
-      end
-      bigger
+    def biggest_line_size(lyric)
+      lyric.each_line.max { |a, b| a.length <=> b.length }.size
     end
   end
 end
