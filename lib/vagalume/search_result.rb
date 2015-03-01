@@ -5,8 +5,7 @@ module Vagalume
     def initialize(result)
       @translations = []
       @status = result["type"]
-      return if @status == Vagalume::Status::NOT_FOUND ||
-                @status == Vagalume::Status::SONG_NOT_FOUND
+      return if not_found?
 
       song = result["mus"].first
       artist = result["art"]
