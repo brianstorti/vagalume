@@ -3,12 +3,20 @@ module Vagalume
     def format(search, options)
       return "No lyric found" if search.not_found?
 
-      song = search.song
+      original_song = search.song
       translated_song = search.translations.with_language(Vagalume::Language::PORTUGUESE)
 
-      return "\n\n#{song.name}\n\n#{song.lyric}" unless options[:translation]
-      return "No translation found" if translated_song.nil?
+      if options[:translation]
+        return "No translation found" if translated_song.nil?
+        return formatted_song_with_transaction(original_song, translated_song)
+      end
 
+      "\n\n#{original_song.name}\n\n#{original_song.lyric}"
+    end
+
+    private
+
+    def formatted_song_with_transaction(song, translated_song)
       original_lyrics_lines = [song.name, ""]
       translated_lyrics_lines = [translated_song.name, ""]
 
@@ -26,8 +34,6 @@ module Vagalume
 
       output
     end
-
-    private
 
     def find_separator(biggest_line_size, lyric_line)
       " " * (biggest_line_size - lyric_line.size) + "     |     "
