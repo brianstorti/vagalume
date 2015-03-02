@@ -26,7 +26,7 @@ module Vagalume
       original_lyrics_lines.each_with_index do |original_line, index|
         separator = find_separator(biggest_line_size, original_line)
         translated_line = translated_lyrics_lines[index]
-        formatted_output += original_line + separator + translated_line + "\n"
+        formatted_output += original_line + separator + translated_line.to_s + "\n"
       end
 
       formatted_output
