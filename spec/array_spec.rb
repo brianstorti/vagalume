@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe Array do
-  it "return song with selected language" do
+  it "returns song with selected language" do
     right_song = double "Song"
     right_song.stub(:language).and_return(Vagalume::Language::PORTUGUESE)
 
