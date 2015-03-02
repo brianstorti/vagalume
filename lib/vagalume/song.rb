@@ -30,11 +30,9 @@ module Vagalume
     # lyric text, so we need to remove the first two lines, in order to
     # have a consistent API with the song object
     def remove_title(lyric)
-      lyric_lines_array = lyric.lines.to_a
-      lyric_lines_array.shift(2)
-      lyric = ""
-      lyric_lines_array.each { |line| lyric << line }
-      lyric
+      lines = lyric.lines.to_a
+      lines.shift(2)
+      lines.join
     end
   end
 end
