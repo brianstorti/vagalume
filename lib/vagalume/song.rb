@@ -26,14 +26,23 @@ module Vagalume
       title.gsub(/\[|\]|\n/, "")
     end
 
-    # This is necessary because on translations, the song title comes with the
-    # lyric text, so we need to remove the first two lines, in order to
-    # have a consistent API with the song object
+    # This is necessary because, for translations, the song title comes with the
+    # lyric text. Also, the format is not always the same, sometimes it's just one line
+    # for the title, sometimes it's the title followed by some empty lines.
+    # Here we remove the first line and any following empty lines, so we have
+    # a consident API.
     def remove_title(lyric)
-      # TODO remove first line + empty lines
-      lines = lyric.lines.to_a
-      lines.shift(2)
+      lines = lyric.lines
+      lines.shift
+      lines = remove_empty_lines_from_beginning(lines)
       lines.join
+    end
+
+    def remove_empty_lines_from_beginning(lines)
+      return lines unless lines.first.empty? || lines.first == "\n"
+
+      lines.shift
+      remove_empty_lines_from_beginning(lines)
     end
   end
 end
