@@ -2,12 +2,12 @@ module Vagalume
   class Song
     attr_accessor :id, :name, :language, :url, :lyric
 
-    def initialize(song_json)
-      @id = song_json["id"]
-      @language = song_json["lang"]
-      @url = song_json["url"]
-      @lyric = song_json["text"]
-      @name = song_json["name"]
+    def initialize(song)
+      @id = song["id"]
+      @language = song["lang"]
+      @url = song["url"]
+      @lyric = song["text"]
+      @name = song["name"]
 
       if translation?
         @name = get_name_from_lyric(@lyric)
@@ -30,6 +30,7 @@ module Vagalume
     # lyric text, so we need to remove the first two lines, in order to
     # have a consistent API with the song object
     def remove_title(lyric)
+      # TODO remove first line + empty lines
       lines = lyric.lines.to_a
       lines.shift(2)
       lines.join

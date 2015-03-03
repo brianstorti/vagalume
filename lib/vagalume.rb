@@ -16,8 +16,8 @@ module Vagalume
 
   def find(artist, song)
     request_url = BASE_URL + "art=#{CGI.escape(artist)}&mus=#{CGI.escape(song)}"
-    result_json = MultiJson.decode(open(request_url).read)
-    search_result = Vagalume::SearchResult.new(result_json)
+    result = MultiJson.decode(open(request_url).read)
+    search_result = Vagalume::SearchResult.new(result)
   end
 
   def get_lyric(artist, song, options)
