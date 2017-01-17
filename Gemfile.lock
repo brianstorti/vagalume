@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vagalume (0.1.7)
+    vagalume (0.1.8)
       multi_json (~> 1.9)
 
 GEM
