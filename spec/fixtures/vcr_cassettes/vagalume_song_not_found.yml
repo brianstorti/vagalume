@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.vagalume.com.br/api/search.php?art=Metallica&mus=Oops
+    uri: http://api.vagalume.com.br/search.php?art=Metallica&mus=Oops
     body:
       encoding: US-ASCII
       string: ''

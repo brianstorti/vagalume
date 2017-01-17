@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.vagalume.com.br/api/search.php?art=Metallica&mus=The%20Unforgiven
+    uri: http://api.vagalume.com.br/search.php?art=Metallica&mus=The%20Unforgiven
     body:
       encoding: US-ASCII
       string: ''
