@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.vagalume.com.br/api/search.php?art=Metallica&mus=Oops
+    uri: https://www.vagalume.com.br/api/search.php?art=Metallica&mus=Oops
     body:
       encoding: US-ASCII
       string: ''
@@ -49,6 +49,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"type":"song_notfound","art":{"id":"3ade68b5g7257eda3","name":"Metallica","url":"http:\/\/www.vagalume.com.br\/metallica\/"}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 09 Jul 2012 22:38:28 GMT
 recorded_with: VCR 2.2.2

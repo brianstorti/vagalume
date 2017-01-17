@@ -12,7 +12,7 @@ require_relative "vagalume/status"
 module Vagalume
   extend self
 
-  BASE_URL = "http://www.vagalume.com.br/api/search.php?"
+  BASE_URL = "https://www.vagalume.com.br/api/search.php?"
 
   def find(artist, song)
     request_url = BASE_URL + "art=#{CGI.escape(artist)}&mus=#{CGI.escape(song)}"

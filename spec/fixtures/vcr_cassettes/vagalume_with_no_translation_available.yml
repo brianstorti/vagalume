@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.vagalume.com.br/api/search.php?art=Bruce%20Springsteen&mus=Ain%27t%20good%20enough%20for%20You
+    uri: https://www.vagalume.com.br/api/search.php?art=Bruce%20Springsteen&mus=Ain%27t%20good%20enough%20for%20You
     body:
       encoding: US-ASCII
       string: ''
