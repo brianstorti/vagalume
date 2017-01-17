@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vagalume (0.1.6)
+    vagalume (0.1.7)
       multi_json (~> 1.9)
 
 GEM
@@ -11,7 +11,7 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
-    multi_json (1.10.1)
+    multi_json (1.12.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -35,3 +35,6 @@ DEPENDENCIES
   vagalume!
   vcr (~> 2.9)
   webmock (~> 1.17)
+
+BUNDLED WITH
+   1.12.5
